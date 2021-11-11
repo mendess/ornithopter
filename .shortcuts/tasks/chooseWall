@@ -6,7 +6,7 @@ notify() {
 if [ "$1" ]; then
     wall="$1"
 else
-    wall="$(find ~/.local/share/wallpapers/ | shuf -n 1)"
+    wall="$(find "$WALLPAPERS" | shuf -n 1)"
 fi
 echo "setting $wall"
 magick "$wall" \
