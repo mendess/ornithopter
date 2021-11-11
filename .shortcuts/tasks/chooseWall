@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/sh
+notify() {
+    echo "$out" | termux-notification -t ChooseWall
+    return 1
+}
+if [ "$1" ]; then
+    wall="$1"
+else
+    wall="$(find ~/.local/share/wallpapers/ | shuf -n 1)"
+fi
+echo "setting $wall"
+magick "$wall" \
+    -gravity center \
+    -extent 9:20 \
+    .wall
+
+if ! out="$out
+    $(termux-wallpaper -f .wall 2>&1)" ; then
+    notify
+else
+    termux-toast -s -g bottom "$(basename "$wall")"
+fi

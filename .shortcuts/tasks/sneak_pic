@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/sh
+dir="sneak_pics/$(date  +'%Y-%m-%d-%H-%M')"
+mkdir -p "$dir"
+for i in "$(seq 1 50)"; do
+    termux-camera-photo -c 1 $dir/$i.jpg
+done

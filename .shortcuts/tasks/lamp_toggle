@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+output="$(ssh mirrodin python bulb/toggle.py 2>&1)" ||
+    echo "$output" | termux-notification -t toggle

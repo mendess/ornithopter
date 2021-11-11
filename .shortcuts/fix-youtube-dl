@@ -1,0 +1,3 @@
+#!/bin/bash
+
+termux-fix-shebang $(which youtube-dl)

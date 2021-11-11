@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+ssh mirrodin python bulb/let_there_be_light.py 2>&1 \
+    | termux-notification -t lamp_on

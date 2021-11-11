@@ -1,0 +1,5 @@
+#!/bin/bash
+exec  &>~/$(basename $0)_log
+export PLAYLIST=spell-book/runes/m/playlist
+
+echo | bash ~/.local/bin/syncmusic
