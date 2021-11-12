@@ -1,6 +1,7 @@
 #!/bin/bash
 exec  &>~/$(basename $0)_log
-export PLAYLIST=spell-book/runes/m/playlist
+export PLAYLIST=~/.cache/playlist
+wget https://raw.githubusercontent.com/mendess/spell-book/master/runes/m/playlist -N -O "$PLAYLIST"
 
 echo | bash ~/.local/bin/syncmusic
 termux-media-scan "$WALLPAPERS"/*

@@ -18,3 +18,4 @@ alias .....='cd ../../../..'
 
 export PATH="$PATH:$HOME/.local/bin:$HOME/.shortcuts:$HOME/.shortcuts/tasks/"
 export WALLPAPERS="$HOME/storage/pictures/wallpapers"
+export PLAYLIST=~/.cache/playlist

@@ -1,4 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/sh
+
+. ~/.bashrc
+
 notify() {
     echo "$out" | termux-notification -t ChooseWall
     return 1
