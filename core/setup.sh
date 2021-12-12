@@ -2,6 +2,7 @@
 pkgs=(
     bat
     bc
+    binutils
     coreutils
     curl
     exa
