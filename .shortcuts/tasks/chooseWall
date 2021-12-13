@@ -15,7 +15,7 @@ echo "setting $wall"
 magick "$wall" \
     -gravity center \
     -extent 9:20 \
-    .wall
+    .wall || cp -v "$wall" .wall
 
 if ! out="$out
     $(termux-wallpaper -f .wall 2>&1)" ; then
