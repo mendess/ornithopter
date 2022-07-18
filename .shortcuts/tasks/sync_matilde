@@ -1,7 +1,0 @@
-#!/bin/sh
-
-rsync -av \
-    --exclude='*serra*'\
-    ~/storage/pictures/Matilde/ mirrodin:matess/pics/
-
-exit 101
