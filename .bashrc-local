@@ -1,0 +1,4 @@
+export PATH=$PATH:~/.shortcuts
+export PATH=$PATH:~/.shortcuts/tasks/
+export WALLPAPERS=~/storage/pictures/wallpapers
+export PLAYLIST=~/.cache/playlist
