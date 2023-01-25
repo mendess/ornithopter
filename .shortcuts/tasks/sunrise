@@ -1,5 +1,3 @@
 #!/data/data/com.termux/files/usr/bin/bash
-for host in mirrodin "$@"; do
-    output="$(ssh $host bulb/flow.py sunrise 2>&1)" ||
-        echo "$output" | termux-notification -t sunrise
-done
+output="$(spark ssh argentum -- bulb/flow.py sunrise 2>&1)" ||
+    echo "$output" | termux-notification -t sunrise

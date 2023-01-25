@@ -2,5 +2,5 @@
 
 host="$1"
 shift
-ssh "$host" '.local/bin/m '"$@"
+spark ssh "$host" -- '.local/bin/m '"$@"
 

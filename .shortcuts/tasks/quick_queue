@@ -1,4 +1,0 @@
-#!/bin/bash
-
-exec &>~/queue_"$1".log
-m q -c "$1"

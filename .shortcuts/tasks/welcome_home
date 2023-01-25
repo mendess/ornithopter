@@ -1,4 +1,4 @@
 #!/data/data/com.termux/files/usr/bin/bash
-ssh mirrodin "~/automation/welcome_home.sh $1" 2>&1 \
+spark ssh argentum -- "~/automation/awake-tolaria.sh" 2>&1 \
     | fold -sw 30 \
     | termux-notification -t Welcome
