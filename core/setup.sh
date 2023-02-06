@@ -46,7 +46,13 @@ echo "=====  STORAGE  ====="
 termux-setup-storage
 mkdir ~/media/
 cp ~/storage/music/ ~/media/music
+
+mkdir -p ~/.local/share/
+ln -sv ~/storage/pictures/wallpapers ~/.local/share
+
 echo "===== DOTFILES  ====="
 cd
+
+
 git clone git@github:mendess/ornithopter
 ./ornithopter/core/update.sh

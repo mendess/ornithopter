@@ -1,6 +1,6 @@
-#!/data/data/com.termux/files/usr/bin/sh
+#!/data/data/com.termux/files/usr/bin/bash
 
-. ~/.bashrc
+. ~/.bash_profile
 
 notify() {
     echo "$out" | termux-notification -t ChooseWall
@@ -9,7 +9,8 @@ notify() {
 if [ "$1" ]; then
     wall="$1"
 else
-    wall="$(find "$WALLPAPERS" | shuf -n 1)"
+    [ "$WALLPAPERS" ] || return
+    wall="$(find -H "$WALLPAPERS" | shuf -n 1)"
 fi
 echo "setting $wall"
 magick "$wall" \
