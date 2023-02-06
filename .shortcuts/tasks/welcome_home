@@ -1,4 +1,2 @@
 #!/data/data/com.termux/files/usr/bin/bash
-spark ssh argentum -- "~/automation/awake-tolaria.sh" 2>&1 \
-    | fold -sw 30 \
-    | termux-notification -t Welcome
+spark ssh argentum -- "~/awake-tolaria.sh"
