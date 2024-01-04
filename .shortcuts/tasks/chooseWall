@@ -6,12 +6,29 @@ notify() {
     echo "$out" | termux-notification -t ChooseWall
     return 1
 }
+
+if [[ "$1" = --battery-check ]]; then
+    shift
+    params=(
+        $(termux-battery-status |
+    	    jq -r '[.status, .percentage] | @tsv') 
+    )
+    case ${params[0]} in
+	    NOT_CHARGING)
+	        if [[ ${params[1]} -lt 31 ]]; then
+	            exit 0
+	        fi
+	  ;;
+    esac
+fi
+
 if [ "$1" ]; then
     wall="$1"
 else
-    [ "$WALLPAPERS" ] || return
+    [ "$WALLPAPERS" ] || exit 0
     wall="$(find -H "$WALLPAPERS" | shuf -n 1)"
 fi
+
 echo "setting $wall"
 magick "$wall" \
     -gravity center \
