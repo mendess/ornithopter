@@ -2,5 +2,25 @@
 
 host="$1"
 shift
-spark ssh "$host" -- '.local/bin/m '"$@"
-
+out=$(spark music "$host" "$@")
+case "$1" in
+    current)
+        jq -r '{
+            title: .Ok.MusicResponse.Current.title,
+	    volume: (.Ok.MusicResponse.Current.volume | floor),
+	    paused: .Ok.MusicResponse.Current.paused,
+        }' <<<$out
+        ;;
+    change-volume)
+        jq -r '.Ok.MusicResponse.Volume.volume | floor' <<<$out
+	;;
+    frwd | back)
+        jq -r '.Ok.MusicResponse.Title.title' <<<$out
+	;;
+    cycle-pause)
+        jq -r '.Ok.MusicResponse.PlayState.paused' <<<$out
+	;;
+    *)
+        echo "$out"
+	;;
+esac
