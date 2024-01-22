@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+output="$(spark ssh argentum -- bulb/flow.py sunset 2>&1)" ||
+    echo "$output" | termux-notification -t sunset
