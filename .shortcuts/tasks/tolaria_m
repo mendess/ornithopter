@@ -1,3 +1,0 @@
-#!/bin/bash
-
-spark ssh tolaria -- '.local/bin/m '"$@"
