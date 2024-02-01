@@ -1,0 +1,2 @@
+syncspellbook
+wmgr
