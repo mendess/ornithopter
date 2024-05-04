@@ -3,3 +3,4 @@ export PATH=$PATH:~/.shortcuts/tasks/
 export WALLPAPERS=~/storage/pictures/wallpapers
 
 alias sshd='whoami ; sshd ; HOSTNAME=ornithopter spark daemon'
+alias speed='termux-location | jq .speed | sed -E '\''s|(.*)|(\1 / 1000) *60 * 60|'\'' | bc'
