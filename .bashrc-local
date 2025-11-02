@@ -2,4 +2,4 @@ export PATH=$PATH:~/.shortcuts
 export PATH=$PATH:~/.shortcuts/tasks/
 export WALLPAPERS=~/storage/pictures/wallpapers
 
-alias sshd='sshd ; HOSTNAME=ornithopter spark daemon'
+alias sshd='whoami ; sshd ; HOSTNAME=ornithopter spark daemon'
